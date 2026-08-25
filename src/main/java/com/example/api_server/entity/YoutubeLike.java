@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 
-@Document(collection = "likes-dislikeAPI")
+@Document(collection = "likes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

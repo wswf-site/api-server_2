@@ -4,9 +4,11 @@ import java.util.Map;
 
 public class DataUtils {
     public static final Map<String, String> VIDEO_ID_TO_TEAM = Map.of(
-            "O5zmjhxmE9E", "MOTIV",
-            "1lpNxXw83xg", "AGSQUAD",
-            "mSy9VXVtCU0", "OSAKA_OjoGang"
+            "Eq12SwjR25s", "MOTIV",
+            "da68UOXfQ_s", "AGSQUAD",
+            "DYg4IjGLUk", "OSAKA_OjoGang",
+            "8ZpL_uXnYGQ", "BUMSUP"
+
     );
     public static final String UNKNOWN_TEAM = "unknown";
 }
