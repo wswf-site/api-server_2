@@ -51,6 +51,20 @@ jobs:
         run: |
           echo "${{ secrets.DOCKER_COMPOSE_ENV_VARS }}" > ./.env
 
+      - name: EC2 SCP 환경 확인
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          script: |
+            whoami
+            command -v tar
+            tar --version | head -n 1
+            df -h /home/ubuntu/api-server
+            touch /home/ubuntu/api-server/.scp-test
+            rm /home/ubuntu/api-server/.scp-test
+
       - name: SCP로 EC2에 Docker Compose 및 .env 파일 전송하기
         uses: appleboy/scp-action@v0.1.7
         with:
